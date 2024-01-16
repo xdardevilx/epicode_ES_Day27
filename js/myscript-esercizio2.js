@@ -1,11 +1,11 @@
 const counter = function () {
   let counterElement = document.getElementById("counter");
-  let test = 0;
+  let test = sessionStorage.getItem("start-time") || 0;
 
   const updateCounter = function () {
     if (test === 0) {
       test++;
-      console.log(test)
+      console.log(test);
     } else if (test !== 0) {
       sessionStorage.setItem("start-time", JSON.stringify(++test));
       console.log(test);
